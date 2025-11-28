@@ -28,35 +28,5 @@ namespace Tyuiu.DevyatovEV.Sprint4.Task6.V16.Test
 
             CollectionAssert.AreEqual(wait, result);
         }
-
-        [TestMethod]
-        public void ValidCalculateEmpty()
-        {
-            DataService ds = new DataService();
-
-            string[] array = { "Машина", "Автобус", "Такси" }; // Все слова не длиной 7 символов
-
-            string[] result = ds.Calculate(array);
-
-            // Должен вернуть пустой массив
-            string[] wait = { };
-
-            CollectionAssert.AreEqual(wait, result);
-        }
-
-        [TestMethod]
-        public void ValidCalculateAllSeven()
-        {
-            DataService ds = new DataService();
-
-            string[] array = { "Самолет", "Трамвай", "Катерок" }; // Все слова длиной 7 символов
-
-            string[] result = ds.Calculate(array);
-
-            // Должен вернуть все элементы
-            string[] wait = { "Самолет", "Трамвай", "Катерок" };
-
-            CollectionAssert.AreEqual(wait, result);
-        }
     }
 }

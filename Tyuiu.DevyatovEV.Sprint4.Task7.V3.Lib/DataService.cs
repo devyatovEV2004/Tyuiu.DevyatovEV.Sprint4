@@ -11,33 +11,27 @@ namespace Tyuiu.DevyatovEV.Sprint4.Task7.V3.Lib
     {
         public int Calculate(int n, int m, string value)
         {
-            int[,] matrix = new int[n, m];
-            int count = 0;
-            int index = 0;
+            int[,] mtrx = new int[n, m];
 
-            // Преобразуем строку в матрицу 4x2
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < m; j++)
                 {
-                    // Преобразуем символ в цифру
-                    matrix[i, j] = int.Parse(value[index].ToString());
-                    index++;
+                    mtrx[i, j] = int.Parse(value.Substring(i * m + j, 1));
                 }
             }
+            int count = 0;
 
-            // Подсчитываем количество нечетных чисел
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < m; j++)
                 {
-                    if (matrix[i, j] % 2 != 0)
+                    if (mtrx[i, j] % 2 != 0)
                     {
                         count++;
                     }
                 }
             }
-
             return count;
         }
     }
